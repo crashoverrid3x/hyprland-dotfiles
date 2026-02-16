@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
@@ -35,3 +36,7 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+=======
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
+>>>>>>> 98ebdaf (update README and Makefile)
