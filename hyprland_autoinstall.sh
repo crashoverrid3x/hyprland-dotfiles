@@ -8,6 +8,8 @@ echo -e "\n\nInstalamos herramientas necesarias\n\n"
 
 sudo pacman -S paru yay hyprland waybar kitty git curl wget zsh hyprpaper rofi python3 golang cmake make ruby perl
 
+rofi-theme-selector
+
 echo -e "\n\n\nAhora vamos a agregar la configuracion a los archivos correspondientes\n\n"
 
 cp -r hyprland-dotfiles/config/kitty /home/$(whoami)/.config/
