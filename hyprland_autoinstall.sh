@@ -10,7 +10,8 @@ sudo pacman -S paru yay hyprland waybar kitty git curl wget zsh
 
 echo -e "\n\n\nAhora vamos a agregar la configuracion a los archivos correspondientes\n\n"
 
-cp -r hyprland-dotfiles/config/ /home/$(whoami)/
+cp -r hyprland-dotfiles/config/kitty /home/$(whoami)/.config/
+cp -r hyprland-dotfiles/config/nvim /home/$(whoami)/.config/
 cp -r hyprland-dotfiles/wallpapers
 
 echo -e "\n\n Hora de configurar zsh y agregar la configuracion:\n\n"
