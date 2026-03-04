@@ -19,6 +19,6 @@ echo -e "\n\n Hora de configurar zsh y agregar la configuracion:\n\n"
 cp hyprland-dotfiles/.zshrc .
 
 echo -e "Configurando el fondo de pantalla: "
-sudo pacman -S swww
+yay -S waypaper
 
 echo -e "\n\nRecuerda editar la configuracion que hay en /home/usuario/.config/hypr/hyprland.conf para cambiar las resoluciones y el escalado de su pantalla para una mejor experiencia.\n"
