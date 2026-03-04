@@ -14,7 +14,8 @@ echo -e "\n\n\nAhora vamos a agregar la configuracion a los archivos correspondi
 
 cp -r hyprland-dotfiles/config/kitty /home/$(whoami)/.config/
 cp -r hyprland-dotfiles/config/nvim /home/$(whoami)/.config/
-cp -r hyprland-dotfiles/wallpapers
+cp -r hyprland-dotfiles/config/rofi /home/$(whoami)/.config/
+cp -r hyprland-dotfiles/wallpapers /home/$(whoami)/
 
 echo -e "\n\n Hora de configurar zsh y agregar la configuracion:\n\n"
 
