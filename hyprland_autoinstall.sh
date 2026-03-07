@@ -12,6 +12,9 @@ rofi-theme-selector
 
 echo -e "\n\n\nAhora vamos a agregar la configuracion a los archivos correspondientes\n\n"
 
+cp -r hyprland-dotfiles/config/hypr /home/$(whoami)/.config/
+cp -r hyprland-dotfiles/config/waybar /home/$(whoami)/.config/
+cp -r hyprland-dotfiles/config/waypaper /home/$(whoami)/.config/
 cp -r hyprland-dotfiles/config/kitty /home/$(whoami)/.config/
 cp -r hyprland-dotfiles/config/nvim /home/$(whoami)/.config/
 cp -r hyprland-dotfiles/config/rofi /home/$(whoami)/.config/
