@@ -44,6 +44,6 @@ map ctrl+shift+r load_config_file
 
 
 # BEGIN_KITTY_THEME
-# Adwaita darker
+# Adwaita dark
 include current-theme.conf
 # END_KITTY_THEME
