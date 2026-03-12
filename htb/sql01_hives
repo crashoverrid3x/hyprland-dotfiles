@@ -1,0 +1,25 @@
+Impacket v0.9.24.dev1+20211013.152215.3fe2d73a - Copyright 2021 SecureAuth Corporation
+
+[*] Target system bootKey: 0x2cdbbee2d1fb9cfb7cf7189fa66971a6
+[*] Dumping local SAM hashes (uid:rid:lmhash:nthash)
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:136b3ddfbb62cb02e53a8f661248f364:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+WDAGUtilityAccount:504:aad3b435b51404eeaad3b435b51404ee:4b4ba140ac0767077aee1958e7f78070:::
+[*] Dumping cached domain logon information (domain/username:hash)
+INLANEFREIGHT.LOCAL/Administrator:$DCC2$10240#Administrator#30376b08e0552233fba8af8e0be0fb13
+INLANEFREIGHT.LOCAL/mssqlsvc:$DCC2$10240#mssqlsvc#7fd9a156f003adec1eed9c9e1165b973
+[*] Dumping LSA Secrets
+[*] $MACHINE.ACC 
+$MACHINE.ACC:plain_password_hex:1446a6328d64f3a85f124219c1b5754ea1e5f80245444c87f52090651bea7be092293dc9970af6e556653ea331a93d5196dd9c679126d40625e9d5266bca99f7caf686be09ee14fb22321ac6f5e53d8b1e8c403b73033bb67347ee1f4342ee3a334a2cbc8b93877153e935bad443c4d805df4cbb2d8d454aa4aa0b27fe7480511e96eba39ca79ff621f768d36046783f12fc5aea17b45150d6713964232113141696e1eb33a79641db50b20e73a458c5ce1d0b44ea9b73c2383a31b257b023e7d2539a6e495fd749074826c58e836194f25fd84a13c2e33b66271a926f1b3e5db0e5e38fe794fa0c4cd6c0bbbb0f0647
+$MACHINE.ACC: aad3b435b51404eeaad3b435b51404ee:2cf1f4b18417ae87ccbd8960731cee3b
+[*] DPAPI_SYSTEM 
+dpapi_machinekey:0x97b7061765871cd4f916f138e8188ff43830deb6
+dpapi_userkey:0x0d9f2fafc12db65450e57f928bb671a1e1b3d764
+[*] NL$KM 
+ 0000   A2 52 9D 31 0B B7 1C 75  45 D6 4B 76 41 2D D3 21   .R.1...uE.KvA-.!
+ 0010   C6 5C DD 04 24 D3 07 FF  CA 5C F4 E5 A0 38 94 14   .\..$....\...8..
+ 0020   91 64 FA C7 91 D2 0E 02  7A D6 52 53 B4 F4 A9 6F   .d......z.RS...o
+ 0030   58 CA 76 00 DD 39 01 7D  C5 F7 8F 4B AB 1E DC 63   X.v..9.}...K...c
+NL$KM:a2529d310bb71c7545d64b76412dd321c65cdd0424d307ffca5cf4e5a03894149164fac791d20e027ad65253b4f4a96f58ca7600dd39017dc5f78f4bab1edc63
+[*] Cleaning up... 
