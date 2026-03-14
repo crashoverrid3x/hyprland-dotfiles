@@ -49,9 +49,8 @@
     },
 	"network": {
 		"tooltip": false,
-		"format-wifi": "<span color='#9ece6a'> </span> {bandwidthDownBits}",
+		"format-wifi": "<span color='#9ece6a'> </span>",
 		"format-ethernet": "",
-        "interval": 30
 	},
 	"backlight": {
 		"tooltip": false,
