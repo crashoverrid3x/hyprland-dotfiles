@@ -1,5 +1,7 @@
 # Hyprland Dotfiles + AutoInstall
 
+> Watermark / Autor: Juan Alberto R. Santana (aka crashoverride)
+
 Script principal: [hyprland-autoinstall.sh](hyprland-autoinstall.sh)
 
 Este proyecto permite:
@@ -14,9 +16,12 @@ El instalador instala:
 - Paquetes base: `git`, `curl`, `wget`, `cmake`, `make`, `gcc`, `clang`, `ruby`, `nano`, `neovim`, `vim`, `zsh`, `base-devel`, etc.
 - Entorno: `hyprland`, `waybar`, `kitty`, `rofi`, `waypaper`, `swaybg`, `hyprpaper`, `flameshot`, `signal-desktop`, `networkmanager`, `bluez`.
 - AUR helpers: `yay` y `paru`.
-- AUR package: `vs-code-bin`.
-- Opcional: repositorio BlackArch (pregunta interactiva).
+- AUR package: `visual-studio-code-bin`.
+- Opcional: repositorio BlackArch (pregunta interactiva, se procesa antes de instalar helpers AUR).
 - Oh My Zsh (si no esta instalado).
+
+Comando de referencia para VS Code:
+`yay -S visual-studio-code-bin`
 
 ## Dotfiles que gestiona
 

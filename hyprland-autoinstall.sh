@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Watermark / Autor: Juan Alberto R. Santana (aka crashoverride)
 set -euo pipefail
 
 REPO_URL="https://github.com/v3ctorsh4de/hyprland-dotfiles.git"
@@ -48,7 +49,7 @@ PACMAN_PACKAGES=(
 )
 
 AUR_PACKAGES=(
-  vs-code-bin
+  visual-studio-code-bin
 )
 
 say() {
@@ -260,9 +261,9 @@ run_install_flow() {
 
   require_sudo
   install_core_packages
+  install_blackarch_repo
   install_yay
   install_paru
-  install_blackarch_repo
   install_aur_packages
   install_oh_my_zsh
   clone_repo "$clone_target"
