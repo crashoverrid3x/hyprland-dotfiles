@@ -1,1 +1,83 @@
-# hyprland-dotfiles
+# Hyprland Dotfiles + AutoInstall
+
+Script principal: [hyprland-autoinstall.sh](hyprland-autoinstall.sh)
+
+Este proyecto permite:
+- Instalar un entorno Hyprland completo en Arch Linux desde cero.
+- Clonar este repo automaticamente.
+- Copiar configuraciones de dotfiles al nuevo sistema.
+- Exportar tus dotfiles actuales en estructura jerarquica para subirlos a GitHub.
+
+## Que instala
+
+El instalador instala:
+- Paquetes base: `git`, `curl`, `wget`, `cmake`, `make`, `gcc`, `clang`, `ruby`, `nano`, `neovim`, `vim`, `zsh`, `base-devel`, etc.
+- Entorno: `hyprland`, `waybar`, `kitty`, `rofi`, `waypaper`, `swaybg`, `hyprpaper`, `flameshot`, `signal-desktop`, `networkmanager`, `bluez`.
+- AUR helpers: `yay` y `paru`.
+- AUR package: `vs-code-bin`.
+- Opcional: repositorio BlackArch (pregunta interactiva).
+- Oh My Zsh (si no esta instalado).
+
+## Dotfiles que gestiona
+
+Se copian/aplican estos directorios desde `config/`:
+- `bin` (incluye `up.sh`)
+- `kitty`
+- `nvim`
+- `rofi`
+- `hypr`
+- `waybar`
+- `waypaper`
+- `flameshot`
+- `Signal`
+
+Tambien gestiona:
+- `.zshrc`
+- `wallpapers/`
+
+Waypaper en este repo queda configurado para:
+- Carpeta de fondos en `~/wallpapers`
+- Backend `swaybg`
+
+## Uso rapido
+
+1. Dar permisos de ejecucion:
+
+```bash
+chmod +x hyprland-autoinstall.sh
+```
+
+2. Ejecutar:
+
+```bash
+./hyprland-autoinstall.sh
+```
+
+3. Elegir una opcion del menu interactivo:
+- `1`: Instalar todo en un Arch nuevo.
+- `2`: Exportar dotfiles actuales.
+- `3`: Instalar y luego exportar.
+- `4`: Salir.
+
+## Flujo recomendado para PC nueva
+
+1. Instalar Arch base con internet funcionando.
+2. Clonar este repo.
+3. Ejecutar `./hyprland-autoinstall.sh`.
+4. Elegir opcion `1`.
+5. Reiniciar sesion al finalizar.
+
+## Exportacion para subir a GitHub
+
+Con la opcion `2` o `3`, el script genera:
+
+- `dotfiles-export/config/...`
+- `dotfiles-export/.zshrc`
+
+Con esto puedes revisar, versionar y subir tus configuraciones sin tocar tu sistema actual.
+
+## Notas
+
+- El script esta pensado para Arch Linux.
+- Si una config no existe en tu sistema o en el repo, se muestra advertencia y continua.
+- Antes de sobrescribir `~/.zshrc`, crea backup automatico en `~/.zshrc.bak.TIMESTAMP`.

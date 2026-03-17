@@ -8,7 +8,7 @@
 
 	"modules-left": ["custom/launcher","cpu","memory","disk","custom/htb"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["hyprland/language","network","pulseaudio", "battery","clock","custom/power"],
+    "modules-right": ["network","bluetooth","pulseaudio", "battery","clock","custom/power"],
 	
 
     // Sourced modules
@@ -17,7 +17,7 @@
 		"tooltip": false,
       "scroll-step": 5,
 		"format": "{icon} {volume}%",
-		"format-muted": "{icon} {volume}%",
+        "format-muted": "<span color='#f7768e'>🔇 </span>",
 		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"format-icons": {
 			"default": [
@@ -49,9 +49,17 @@
     },
 	"network": {
 		"tooltip": false,
-		"format-wifi": "<span color='#9ece6a'> </span>",
+        "format-wifi": "<span color='#9ece6a'></span>",
 		"format-ethernet": "",
+        "on-click": "sh -c 'gtk-launch nm-connection-editor.desktop 2>/dev/null || nm-connection-editor'"
 	},
+    "bluetooth": {
+        "tooltip": false,
+        "format-on": "<span color='#7aa2f7'> </span>",
+        "format-off": "<span color='#7aa2f7'> </span>",
+        "format-disabled": "<span color='#7aa2f7'> </span>",
+        "on-click": "sh -c 'blueman-manager 2>/dev/null || gnome-control-center bluetooth'"
+    },
 	"backlight": {
 		"tooltip": false,
 		"format": " {}%",

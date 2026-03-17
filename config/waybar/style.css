@@ -102,6 +102,10 @@ window#waybar.hidden {
 	background: #222330;
 }
 
+#bluetooth {
+	margin-left: 6px;
+}
+
 #pulseaudio {
 	margin-top: 6px;
 	margin-left: 8px;

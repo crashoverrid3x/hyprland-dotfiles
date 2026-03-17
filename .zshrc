@@ -11,11 +11,11 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
 export PATH="$HOME/.local/kitty.app/bin:$PATH"
 export PATH="$PATH:$HOME/.local/bin/bat-binary/:$HOME/.local/bin/"
 export TERMINAL=kitty
 
+alias up="~/.config/bin/up.sh"
 alias jr="cc -Wall -Wextra -Werror"
 alias catn="cat"
 alias cat="bat"
@@ -64,6 +64,56 @@ PROMPT='%F{cyan}󰣇 %f %F{magenta}%n%f $(dir_icon) %F{red}%~%f%${vcs_info_msg_0
 USER=jreyes-s
 export USER
 
-alias francinette=/home/jreyes-s/francinette/tester.sh
 
-alias paco=/home/jreyes-s/francinette/tester.sh
+
+
+# cpp-fast-config path start
+if [[ -d "$HOME/.cpp-fast-config/bin" ]]; then
+  case ":$PATH:" in
+    *":$HOME/.cpp-fast-config/bin:"*) ;;
+    *) export PATH="$HOME/.cpp-fast-config/bin:$PATH" ;;
+  esac
+
+  hash -r 2>/dev/null || true
+  rehash 2>/dev/null || true
+fi
+# cpp-fast-config path end
+# cpp-fast-config run start
+run() {
+  local dir="$PWD"
+  while [[ "$dir" != "/" ]]; do
+    if [[ -x "$dir/.vscode/run" ]]; then
+      "$dir/.vscode/run" "$@"
+      return $?
+    fi
+    dir="$(dirname "$dir")"
+  done
+  echo "No .vscode/run found above current directory." >&2
+  return 1
+}
+
+cpp() {
+  local dir="$PWD"
+  while [[ "$dir" != "/" ]]; do
+    if [[ -x "$dir/.vscode/cpp" ]]; then
+      "$dir/.vscode/cpp" "$@"
+      return $?
+    fi
+    dir="$(dirname "$dir")"
+  done
+
+  if [[ -x "$HOME/.cpp-fast-config/bin/cpp" ]]; then
+    "$HOME/.cpp-fast-config/bin/cpp" "$@"
+    return $?
+  fi
+
+  echo "No local '.vscode/cpp' or global helper found." >&2
+  return 1
+}
+
+create_cpp_app() {
+  cpp init "$@"
+}
+
+alias create-cpp-app='create_cpp_app'
+# cpp-fast-config run end
