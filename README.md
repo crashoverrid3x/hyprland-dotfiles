@@ -9,6 +9,7 @@ Este proyecto permite:
 - Clonar este repo automaticamente.
 - Copiar configuraciones de dotfiles al nuevo sistema.
 - Exportar tus dotfiles actuales en estructura jerarquica para subirlos a GitHub.
+- Verificar comandos usados en `hyprland.conf` y `waybar` e instalar dependencias faltantes.
 
 ## Que instala
 
@@ -19,6 +20,7 @@ El instalador instala:
 - AUR package: `visual-studio-code-bin`.
 - Opcional: repositorio BlackArch (pregunta interactiva, se procesa antes de instalar helpers AUR).
 - Oh My Zsh (si no esta instalado).
+- Dependencias de runtime usadas por `config/hypr/hyprland.conf` y `config/waybar/config`.
 
 Comando de referencia para VS Code:
 `yay -S visual-studio-code-bin`
