@@ -12,6 +12,20 @@ Este proyecto permite:
 - Verificar comandos usados en `hyprland.conf` y `waybar` e instalar dependencias faltantes.
 - Usar selector grafico de fondos y restaurar wallpaper persistente al iniciar sesion.
 
+## Instalacion automatica (sin clonar manualmente)
+
+Con `curl`:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/crashoverrid3x/hyprland-dotfiles/main/hyprland-autoinstall.sh -o /tmp/hyprland-autoinstall.sh && chmod +x /tmp/hyprland-autoinstall.sh && /tmp/hyprland-autoinstall.sh
+```
+
+Con `wget`:
+
+```bash
+wget -qO /tmp/hyprland-autoinstall.sh https://raw.githubusercontent.com/crashoverrid3x/hyprland-dotfiles/main/hyprland-autoinstall.sh && chmod +x /tmp/hyprland-autoinstall.sh && /tmp/hyprland-autoinstall.sh
+```
+
 ## Que instala
 
 El instalador instala:
@@ -36,6 +50,7 @@ Se copian/aplican estos directorios desde `config/`:
 - `hypr`
 - `waybar`
 - `waypaper`
+- `wlogout`
 - `flameshot`
 - `Signal`
 
@@ -76,7 +91,8 @@ chmod +x hyprland-autoinstall.sh
 - `1`: Instalar todo en un Arch nuevo.
 - `2`: Exportar dotfiles actuales.
 - `3`: Instalar y luego exportar.
-- `4`: Salir.
+- `4`: Sincronizar cambios actuales al repo.
+- `5`: Salir.
 
 ## Flujo recomendado para PC nueva
 

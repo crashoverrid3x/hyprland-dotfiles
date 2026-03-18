@@ -15,6 +15,7 @@ CFG_ITEMS=(
 	"hypr"
 	"waybar"
 	"waypaper"
+	"wlogout"
 	"flameshot"
 	"Signal"
 )
