@@ -14,6 +14,7 @@ CFG_ITEMS=(
 	"rofi"
 	"hypr"
 	"waybar"
+	"waypaper"
 	"flameshot"
 	"Signal"
 )
@@ -37,10 +38,15 @@ PACMAN_PACKAGES=(
 	waybar
 	kitty
 	rofi
+	swww
+	imv
 	swaybg
 	hyprpaper
 	flameshot
 	signal-desktop
+	pipewire
+	pipewire-pulse
+	wireplumber
 	bluez
 	bluez-utils
 	networkmanager
@@ -48,6 +54,9 @@ PACMAN_PACKAGES=(
 
 AUR_PACKAGES=(
 	visual-studio-code-bin
+	light
+	wlogout
+	waypaper
 )
 
 # Dependencias detectadas por uso en config/hypr/hyprland.conf y config/waybar/config
@@ -63,13 +72,13 @@ CONFIG_PACMAN_DEPENDENCIES=(
 	wl-clipboard
 	hyprshot
 	pipewire
+	pipewire-pulse
 	wireplumber
-	pulseaudio
+	libpulse
+	swww
+	imv
 	blueman
 	gnome-control-center
-	nm-connection-editor
-	light
-	wlogout
 	alacritty
 	pacman-contrib
 	libnotify
@@ -84,7 +93,10 @@ CONFIG_AUR_DEPENDENCIES=(
 CONFIG_COMMANDS_TO_VERIFY=(
 	waybar
 	hyprctl
+	waypaper
+	swww
 	swaybg
+	imv
 	kitty
 	dolphin
 	firefox
@@ -363,6 +375,34 @@ export_current_dotfiles() {
 	say "Dotfiles exportados en: $EXPORT_DIR"
 }
 
+sync_repo_from_current() {
+	say "Sincronizando cambios de ~/.config al repo local..."
+	mkdir -p "$SCRIPT_DIR/config"
+
+	local item
+	for item in "${CFG_ITEMS[@]}"; do
+		if [[ -d "$HOME/.config/$item" ]]; then
+			rm -rf "$SCRIPT_DIR/config/$item"
+			cp -a "$HOME/.config/$item" "$SCRIPT_DIR/config/$item"
+			say "Sincronizado: config/$item"
+		else
+			warn "No existe en tu sistema: ~/.config/$item"
+		fi
+	done
+
+	if [[ -f "$HOME/.zshrc" ]]; then
+		cp -a "$HOME/.zshrc" "$SCRIPT_DIR/.zshrc"
+		say "Sincronizado: .zshrc"
+	fi
+
+	if [[ -f "$SCRIPT_DIR/config/bin/up.sh" ]]; then
+		chmod +x "$SCRIPT_DIR/config/bin/up.sh"
+		say "Permisos aplicados: config/bin/up.sh"
+	fi
+
+	say "Repo actualizado con tus ultimos cambios."
+}
+
 run_install_flow() {
 	local clone_target
 	read -r -p "Ruta destino para clonar dotfiles [$DEFAULT_CLONE_DIR]: " clone_target || true
@@ -391,7 +431,8 @@ show_menu() {
 1) Instalar todo en un Arch nuevo
 2) Exportar tus dotfiles actuales a carpeta jerarquica
 3) Instalar y luego exportar
-4) Salir
+4) Sincronizar cambios actuales al repo
+5) Salir
 EOF
 }
 
@@ -400,7 +441,7 @@ main() {
 	show_menu
 
 	local choice
-	read -r -p "Elige una opcion [1-4]: " choice
+	read -r -p "Elige una opcion [1-5]: " choice
 
 	case "$choice" in
 	1)
@@ -414,6 +455,9 @@ main() {
 		export_current_dotfiles
 		;;
 	4)
+		sync_repo_from_current
+		;;
+	5)
 		say "Saliendo sin cambios."
 		;;
 	*)

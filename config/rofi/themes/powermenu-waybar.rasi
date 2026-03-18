@@ -1,0 +1,116 @@
+configuration {
+  show-icons: false;
+  hover-select: true;
+}
+
+* {
+  bg-main:   #1A1B26F7;
+  bg-panel:  #222330FA;
+  bg-hover:  #2D3B5CF5;
+  bg-hover-soft: #273352F2;
+  fg-main:   #C8D3F5;
+  fg-accent: #7AA2F7;
+  fg-danger: #F7768E;
+  border:    #7AA2F766;
+  border-soft: #7AA2F744;
+
+  font: "JetBrainsMono Nerd Font 13";
+}
+
+window {
+  location: northeast;
+  anchor: northeast;
+  width: 350px;
+  border: 2px;
+  border-color: @border;
+  border-radius: 14px;
+  background-color: @bg-main;
+}
+
+mainbox {
+  spacing: 8px;
+  padding: 10px;
+  background-color: transparent;
+}
+
+inputbar {
+  children: [ prompt, entry ];
+  spacing: 8px;
+  padding: 8px 10px;
+  border: 1px;
+  border-radius: 10px;
+  border-color: @border;
+  background-color: @bg-panel;
+}
+
+prompt {
+  text-color: @fg-accent;
+  font: "JetBrainsMono Nerd Font Bold 13";
+  background-color: transparent;
+}
+
+entry {
+  text-color: @fg-main;
+  placeholder: "Choose action";
+  placeholder-color: #9AA5CE;
+  background-color: transparent;
+}
+
+listview {
+  lines: 6;
+  columns: 1;
+  cycle: false;
+  dynamic: false;
+  spacing: 7px;
+  scrollbar: false;
+  background-color: transparent;
+}
+
+element {
+  orientation: horizontal;
+  children: [ element-text ];
+  padding: 11px 12px;
+  border: 1px;
+  border-radius: 10px;
+  border-color: @border-soft;
+  background-color: @bg-panel;
+  text-color: @fg-main;
+  cursor: pointer;
+}
+
+element-text {
+  expand: true;
+  horizontal-align: 0.0;
+  text-color: inherit;
+  vertical-align: 0.5;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+element selected {
+  border-color: @fg-accent;
+  background-color: @bg-hover;
+  text-color: #F1F1F1;
+}
+
+element selected.normal {
+  background-color: @bg-hover;
+  text-color: #F1F1F1;
+}
+
+element selected.active {
+  background-color: @bg-hover-soft;
+  border-color: @fg-accent;
+  text-color: #F1F1F1;
+}
+
+element selected.urgent {
+  background-color: #3A2931F4;
+  border-color: @fg-danger;
+  text-color: #F1F1F1;
+}
+
+element normal.normal {
+  background-color: @bg-panel;
+  text-color: @fg-main;
+}

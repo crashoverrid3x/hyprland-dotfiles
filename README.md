@@ -10,6 +10,7 @@ Este proyecto permite:
 - Copiar configuraciones de dotfiles al nuevo sistema.
 - Exportar tus dotfiles actuales en estructura jerarquica para subirlos a GitHub.
 - Verificar comandos usados en `hyprland.conf` y `waybar` e instalar dependencias faltantes.
+- Usar selector grafico de fondos y restaurar wallpaper persistente al iniciar sesion.
 
 ## Que instala
 
@@ -41,6 +42,17 @@ Se copian/aplican estos directorios desde `config/`:
 Tambien gestiona:
 - `.zshrc`
 - `wallpapers/`
+
+## Selector de fondos y persistencia
+
+- Selector GUI: `waypaper` (lo puedes abrir desde rofi: `waypaper` o `wallpaper-selector.sh`).
+- Restauracion persistente al iniciar Hyprland: `~/.config/bin/wallpaper-restore.sh`.
+- El wallpaper actual se toma desde `~/.config/waypaper/config.ini`.
+
+## Visor de imagenes desde terminal
+
+- Comando rapido: `img <ruta_imagen>`
+- Usa `imv` si esta disponible (fallback a `kitty +kitten icat`).
 
 Waypaper en este repo queda configurado para:
 - Carpeta de fondos en `~/wallpapers`

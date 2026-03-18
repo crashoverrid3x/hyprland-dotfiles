@@ -130,7 +130,7 @@
     },
     "custom/power":{
         "format": "<span color='#f7768e'>⏻</span>",
-        "on-click": "wlogout",
+        "on-click": "~/.config/waybar/scripts/powermenu.sh",
     },
     "custom/updates":{
         "format": "{} Update(s)",
