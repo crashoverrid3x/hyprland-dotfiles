@@ -55,9 +55,11 @@
 	},
     "bluetooth": {
         "tooltip": false,
-        "format-on": "<span color='#7aa2f7'> </span>",
-        "format-off": "<span color='#7aa2f7'> </span>",
-        "format-disabled": "<span color='#7aa2f7'> </span>",
+        "format-on": "<span color='#9ece6a'></span>",
+        "format-off": "<span color='#9ece6a'></span>",
+        "format-disabled": "<span color='#9ece6a'></span>",
+        "format-connected": "<span color='#9ece6a'></span>",
+        "format-connected-battery": "<span color='#9ece6a'></span>",
         "on-click": "sh -c 'blueman-manager 2>/dev/null || gnome-control-center bluetooth'"
     },
 	"backlight": {
@@ -142,7 +144,8 @@
     "custom/htb": {
       "exec": "~/.config/waybar/scripts/hackthebox.sh",
       "interval": 5,
-      "format": "{}"
+            "format": "{}",
+            "on-click": "~/.config/waybar/scripts/vpn-ovpn-gui.sh"
     },
     "hyprland/language": {
       "format": "  {}",

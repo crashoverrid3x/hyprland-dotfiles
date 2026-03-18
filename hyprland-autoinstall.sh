@@ -51,6 +51,8 @@ PACMAN_PACKAGES=(
 	bluez
 	bluez-utils
 	networkmanager
+	networkmanager-openvpn
+	nm-connection-editor
 )
 
 AUR_PACKAGES=(
@@ -80,6 +82,8 @@ CONFIG_PACMAN_DEPENDENCIES=(
 	imv
 	blueman
 	gnome-control-center
+	networkmanager-openvpn
+	nm-connection-editor
 	alacritty
 	pacman-contrib
 	libnotify

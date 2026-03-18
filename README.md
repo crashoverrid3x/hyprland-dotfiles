@@ -31,6 +31,7 @@ wget -qO /tmp/hyprland-autoinstall.sh https://raw.githubusercontent.com/crashove
 El instalador instala:
 - Paquetes base: `git`, `curl`, `wget`, `cmake`, `make`, `gcc`, `clang`, `ruby`, `nano`, `neovim`, `vim`, `zsh`, `base-devel`, etc.
 - Entorno: `hyprland`, `waybar`, `kitty`, `rofi`, `waypaper`, `swaybg`, `hyprpaper`, `flameshot`, `signal-desktop`, `networkmanager`, `bluez`.
+- VPN de escritorio (Arch): `networkmanager-openvpn` + `nm-connection-editor` para importar y conectar perfiles `.ovpn`.
 - AUR helpers: `yay` y `paru`.
 - AUR package: `visual-studio-code-bin`.
 - Opcional: repositorio BlackArch (pregunta interactiva, se procesa antes de instalar helpers AUR).
@@ -72,6 +73,12 @@ Tambien gestiona:
 Waypaper en este repo queda configurado para:
 - Carpeta de fondos en `~/wallpapers`
 - Backend `swaybg`
+
+## VPN desde app de escritorio
+
+- App recomendada en Arch: `nm-connection-editor` (Conexiones avanzadas de red).
+- Soporte `.ovpn`: `networkmanager-openvpn`.
+- Flujo actual en esta config: click en modulo `custom/htb` abre `nm-connection-editor` para gestionar/importar OVPN.
 
 ## Uso rapido
 

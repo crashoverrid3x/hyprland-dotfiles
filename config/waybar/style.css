@@ -103,7 +103,16 @@ window#waybar.hidden {
 }
 
 #bluetooth {
+	margin-top: 6px;
 	margin-left: 6px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 6px;
+	border-radius: 18px;
+	font-size: 14px;
+	font-weight: bold;
+	transition: none;
+	background: #222330;
 }
 
 #pulseaudio {
