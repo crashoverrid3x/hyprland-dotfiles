@@ -14,7 +14,6 @@ CFG_ITEMS=(
 	"rofi"
 	"hypr"
 	"waybar"
-	"waypaper"
 	"flameshot"
 	"Signal"
 )
@@ -38,7 +37,6 @@ PACMAN_PACKAGES=(
 	waybar
 	kitty
 	rofi
-	waypaper
 	swaybg
 	hyprpaper
 	flameshot
