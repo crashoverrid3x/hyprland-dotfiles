@@ -1,4 +1,4 @@
-# Older Vewsion - Hyprland Dotfiles + AutoInstall - Antiguo
+# Older Version - Hyprland Dotfiles + AutoInstall - Antiguo
 
 > Watermark / Autor: Juan Alberto R. Santana (aka crashoverride)
 
